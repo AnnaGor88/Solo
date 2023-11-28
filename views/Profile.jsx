@@ -8,6 +8,9 @@ const Profile = ({ user, myRep }) => (
 
       <div className="main__top">
         <iframe frameBorder="no" scrolling="no" width="280" height="150" src="https://yandex.ru/time/widget/?geoid=213&lang=ru&layout=horiz&type=analog&face=serif" />
+        <div className="all__top">
+          <img className="all__image" src="/style/image/3333.png" alt="3333" />
+        </div>
         <h1 className="prof__name">
           Рады помочь,
           {user.name}
