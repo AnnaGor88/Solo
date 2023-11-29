@@ -2,8 +2,8 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-const UserPost = ({ entryData }) => (
-  <Layout>
+const UserPost = ({ entryData, currentUser, user }) => (
+  <Layout user={user}>
     <div className="main">
 
       <div className="main__top">
@@ -19,41 +19,24 @@ const UserPost = ({ entryData }) => (
             <button type="submit" data-id={entryData.id} className="myBut">Выполнено</button>
           </div>
         </div>
-        <div className="form-div">
+        <div className="form-div" id="userForm">
           <h2 className="userForm">Форма для заполнения</h2>
-          <form action="/profile" method="POST" id="form">
-            <div className="myForm">
-              <label className="form-label">
-                <br />
-                Куда звонили
-                <br />
-                <br />
-                <input
-                  name="number"
-                  className="form-control"
-                  id="exampleInputNumber"
-                />
-              </label>
-            </div>
-            <div className="myForm">
-              <label className="form-label">
-                <br />
-                Результат звонка (максимально развернуто)
-                <br />
-                <br />
-                <textarea
-                  cols={80}
-                  rows={20}
-                  name="raport"
-                  type="text"
-                  className="form-area"
-                  id="exampleInputText"
-                />
-              </label>
-            </div>
-            <button type="submit" className="rewrite myBut" data-id={entryData.id}>
-              Отправить обращение
-            </button>
+          <form
+            className="formFromOleg"
+            action="https://formspree.io/f/xpzggjng"
+            method="POST"
+          >
+            <label>
+              Почта клиента:
+              <br />
+              <input className="emailInput" type="email" name="email" value={`${currentUser.email}`} />
+            </label>
+            <label>
+              Подробный отчет о совершенном звонке:
+              <br />
+              <textarea className="textarea" name="message" />
+            </label>
+            <button className="myBut" type="submit">Отправить отчет о звонке</button>
           </form>
         </div>
 

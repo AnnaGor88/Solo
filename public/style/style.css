@@ -336,3 +336,20 @@ iframe {
     display: flex;
     flex-wrap: wrap;
 }
+
+.formFromOleg {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.emailInput {
+    width: 20vw;
+    height: 3vh;
+    font-size: 20px;
+}
+
+.textarea {
+    width: 30vw;
+    height: 40vh;
+}

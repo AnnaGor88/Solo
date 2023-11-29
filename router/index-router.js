@@ -137,11 +137,16 @@ indexRouter.post('/profile', async (req, res) => {
 
 indexRouter.get('/admin/:id', async (req, res) => {
   try {
-    console.log(req.params);
-    const entry = await Todo.findOne({ where: { id: req.params.id } });
-    const entryData = entry.get({ plain: true });
-    console.log('!!!!!!!!!!!!!!', entryData);
-    renderTemplate(UserPost, { entryData }, res);
+    const { user } = req.session;
+    if (user.email === '1@1') {
+      console.log(req.params);
+      const entry = await Todo.findOne({ where: { id: req.params.id } });
+      const entryData = entry.get({ plain: true });
+      const currentUser = await User.findOne({ where: { id: entryData.userId } });
+      renderTemplate(UserPost, { entryData, currentUser, user }, res);
+    } else {
+      res.redirect('/');
+    }
   } catch (error) {
     console.error(error);
   }
