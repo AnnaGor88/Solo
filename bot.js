@@ -29,7 +29,7 @@ bot.on('message', async (ctx) => {
     console.log(hashPassword);
     console.log('!!!!!!!', userName);
     console.log('*********', userMail);
-    const telegaUser = await User.create({ name: userName, email: userMail, password: '123' });
+    const telegaUser = await User.create({ name: userName, email: userMail, password: hashPassword });
     console.log(telegaUser);
     const telegaTodo = await Todo.create({ title: 'запрос телеги', text: userText, userId: telegaUser.id });
   }
