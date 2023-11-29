@@ -1,6 +1,10 @@
 /* eslint-disable max-len */
-const indexRouter = require('express').Router();
+const { Telegraf } = require('telegraf');
+const { message } = require('telegraf/filters');
+
 const bcrypt = require('bcrypt');
+
+const indexRouter = require('express').Router();
 const renderTemplate = require('../lib/renderTemplate');
 const Main = require('../views/Main');
 const { User, Todo, Done } = require('../db/models');
