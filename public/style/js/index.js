@@ -1,6 +1,3 @@
-// require('dotenv').config();
-// const nodemailer = require('nodemailer');
-
 const form = document.querySelector('#form');
 const userCards = document.querySelector('.user__cards');
 
@@ -73,33 +70,3 @@ userCard?.addEventListener('click', async (e) => {
     window.location.href = 'http://localhost:3000/admin/';
   }
 });
-
-// Отправка писем
-
-// const send = nodemailer.createTransport({
-//   service: 'gmail',
-//   host: 'smtp.gmail.com',
-//   port: 465,
-//   auth: {
-//     user: 'annagoriachevajs@gmail.com',
-//     pass: '9021988annA',
-//   },
-// });
-
-// const userMail = 'goryachevaanny@gmail.com';
-// const userText = 'Превед-медвед';
-
-// const mailOptions = {
-//   from: 'annagoriachevajs@gmail.com',
-//   to: userMail,
-//   subject: 'Отчет о звонке по вашей заявке',
-//   text: userText,
-// };
-
-// send.sendMail(mailOptions, (err, res) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('The email was sent successfully');
-//   }
-// });

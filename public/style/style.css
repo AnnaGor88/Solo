@@ -173,6 +173,21 @@ hr {
     gap: 50px;
 }
 
+.list {
+    gap: 20px;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.list__title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.user__content:hover {
+    transform: scale(1.1);
+}
+
 .content__cards {
     gap: 20px;
 }
@@ -352,4 +367,8 @@ iframe {
 .textarea {
     width: 30vw;
     height: 40vh;
+}
+
+.main__cont {
+    margin-top: 100px;
 }

@@ -12,6 +12,7 @@ const Admin = ({ cards, user }) => (
           {user.name}
         </h1>
       </div>
+      <h2 className="list__title">Список заявок</h2>
       <div className="list">
         {cards.map((el) => (
           <div className="user__content" key={el.id}>
