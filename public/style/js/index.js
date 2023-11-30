@@ -70,3 +70,22 @@ userCard?.addEventListener('click', async (e) => {
     window.location.href = 'http://localhost:3000/admin/';
   }
 });
+
+// const pay = document.querySelector('#pay');
+
+// pay.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   fetch('/create-checkout-session', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       items: [{ id: 1, quantity: 1 }],
+//     }),
+//   }).then(res => {
+//     if(res.ok) return res.json()}).then(({url}) => {
+//       window.location = url
+//     })
+//   })
+// });

@@ -5,6 +5,7 @@ require('dotenv').config();
 const path = require('path');
 
 const app = express();
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 
 const expressSession = require('express-session');
 const FileStore = require('session-file-store')(expressSession);
@@ -25,6 +26,8 @@ const sessionConfig = {
     httpOnly: true,
   },
 };
+
+const storeItems = new Map([{ price: 5000, name: 'Оплата услуг связи по оставленной заявке' }]);
 
 app.use(expressSession(sessionConfig));
 app.use(express.static(path.join(process.cwd(), 'public')));

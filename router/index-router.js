@@ -156,9 +156,23 @@ indexRouter.get('/admin/:id', async (req, res) => {
   }
 });
 
+indexRouter.post('/user/telega', async (req, res) => {
+  try {
+    const userReport = req.body;
+    const hashPassword = await bcrypt.hash(userReport.pass, 7);
+    const telegaUser = await User.create({ name: userReport.userName, email: userReport.userMail, password: hashPassword });
+    console.log('**********', telegaUser);
+    await Todo.create({ title: 'запрос телеги', text: userReport.userText, userId: telegaUser.id });
+    res.end();
+    console.log('+++++++++++++++', userReport);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 indexRouter.post('/admin/:id', async (req, res) => {
   try {
-    console.log(req.body);
+    console.log('GGGGGOOOOPAAAA', req.body);
     const todo = await Todo.findOne({ where: { id: req.body.id } });
     const entryData = todo.get({ plain: true });
     console.log('!!!!!!!!!!!!!!', entryData.userId);

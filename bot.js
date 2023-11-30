@@ -24,9 +24,21 @@ bot.on('message', async (ctx) => {
     const pass = '123';
     ctx.reply(`Спасибо, ваш заказ принят, ваш логин на сайте ${userMail} и пароль ${pass}`);
 
-    const hashPassword = await bcrypt.hash(pass, 7);
-    const telegaUser = await User.create({ name: userName, email: userMail, password: hashPassword });
-    await Todo.create({ title: 'запрос телеги', text: userText, userId: telegaUser.id });
+    const obj = {
+      userName,
+      userMail,
+      pass,
+      userText,
+      title: 'Запрос с телеги',
+    };
+
+    await fetch(process.env.ADDRESS, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
   }
 });
 bot.launch();

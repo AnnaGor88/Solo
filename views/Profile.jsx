@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/iframe-has-title */
 const React = require('react');
 
 const Layout = require('./Layout');
@@ -64,7 +66,7 @@ const Profile = ({ user, myRep }) => (
             </button>
           </form>
         </div>
-
+        <button className="myBut" id="pay">Оплатить услугу</button>
       </div>
     </div>
 
