@@ -66,7 +66,17 @@ const Profile = ({ user, myRep }) => (
             </button>
           </form>
         </div>
-        {/* <button className="myBut" id="pay">Оплатить услугу</button> */}
+
+      </div>
+      <div className="payment">
+        <form id="payment-form">
+          <div id="payment-element" />
+          <button id="submit">
+            <div className="spinner hidden" id="spinner" />
+            <span id="button-text">Pay now</span>
+          </button>
+          <div id="payment-message" className="hidden" />
+        </form>
       </div>
     </div>
 

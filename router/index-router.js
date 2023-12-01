@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 const { Telegraf } = require('telegraf');
 const { message } = require('telegraf/filters');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const bcrypt = require('bcrypt');
 
