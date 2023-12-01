@@ -286,6 +286,10 @@ iframe {
     width: 100%;
 }
 
+textarea {
+    resize: none;
+}
+
 .login-btn, .send, .myBut {
     background-color: #df6256;
     padding: 10px 15px;

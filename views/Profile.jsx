@@ -66,7 +66,7 @@ const Profile = ({ user, myRep }) => (
             </button>
           </form>
         </div>
-        <button className="myBut" id="pay">Оплатить услугу</button>
+        {/* <button className="myBut" id="pay">Оплатить услугу</button> */}
       </div>
     </div>
 
